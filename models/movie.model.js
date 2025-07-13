@@ -3,9 +3,16 @@ import { model, Schema } from "mongoose";
 
 // write this schema
 const schema = new Schema({
-    title : String,
-    desc : String
-})
+    title : {
+        type: String,
+        required : true,
+        unique: true,
+    },
+    desc : {
+        type: String,
+        required : true,
+    },
+});
 
 // Create your model
 const Movie = model("Movie", schema)
